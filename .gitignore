@@ -1,0 +1,11 @@
+###########################
+## MCP, Minecraft, Forge ##
+###########################
+
+/.gradle
+/eclipse
+/out
+
+*.iml
+*.ipr
+*.iws
