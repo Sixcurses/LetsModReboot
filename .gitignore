@@ -5,11 +5,7 @@
 /.gradle
 /run
 /out
-/gradle
 
-
-gradlew.bat
-gradlew
 *.iml
 *.ipr
 *.iws
