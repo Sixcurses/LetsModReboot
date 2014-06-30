@@ -1,5 +1,6 @@
 package com.sixcurses.letsmodreboot;
 
+import com.sixcurses.letsmodreboot.configuration.ConfigurationHandler;
 import com.sixcurses.letsmodreboot.proxy.IProxy;
 import com.sixcurses.letsmodreboot.reference.Reference;
 import cpw.mods.fml.common.Mod;
@@ -19,7 +20,7 @@ public class LetsModReboot {
 
     @Mod.EventHandler // Networkhandling, Config, Items / Blocks
     public void preInit(FMLPreInitializationEvent event){
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler // Gui, Tile Entity's, Recipes, General
