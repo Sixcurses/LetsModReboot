@@ -1,5 +1,6 @@
 package com.sixcurses.letsmodreboot.item;
 
+import com.sixcurses.letsmodreboot.creativetab.CreativeTabLMRB;
 import com.sixcurses.letsmodreboot.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,7 +11,9 @@ import net.minecraft.item.ItemStack;
 public class ItemLMRB extends Item {
 
     public ItemLMRB(){
+
         super();
+        this.setCreativeTab(CreativeTabLMRB.LMRB_TAB);
     }
 
     @Override

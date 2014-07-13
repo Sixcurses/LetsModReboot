@@ -2,6 +2,7 @@ package com.sixcurses.letsmodreboot;
 
 import com.sixcurses.letsmodreboot.handler.ConfigurationHandler;
 import com.sixcurses.letsmodreboot.init.ModItems;
+import com.sixcurses.letsmodreboot.init.ModBlocks;
 import com.sixcurses.letsmodreboot.proxy.IProxy;
         import com.sixcurses.letsmodreboot.reference.Reference;
         import com.sixcurses.letsmodreboot.utility.LogHelper;
@@ -21,21 +22,22 @@ public class LetsModReboot {
     @SidedProxy (clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
-    @Mod.EventHandler // Networkhandling, Config, Items / Blocks
+    @Mod.EventHandler // PREINIT Networkhandling, Config, Items / Blocks
     public void preInit(FMLPreInitializationEvent event){
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         LogHelper.info ("Pre Initialization Complete!");
 
         ModItems.init();
+        ModBlocks.init();
     }
 
-    @Mod.EventHandler // Gui, Tile Entity's, Recipes, General
+    @Mod.EventHandler // INIT Gui, Tile Entity's, Recipes, General
     public void init (FMLInitializationEvent event){
         LogHelper.info ("Initialization Complete!");
     }
 
-    @Mod.EventHandler // Wrap up
+    @Mod.EventHandler // POSTINIT Wrap up
     public void postInit (FMLPostInitializationEvent event){
         LogHelper.info("Post Initialization Complete!");
     }
